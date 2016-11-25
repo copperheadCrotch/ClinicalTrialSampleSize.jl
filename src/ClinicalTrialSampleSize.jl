@@ -23,6 +23,13 @@ export
     OneSamplePropSuperior,
     OneSamplePropEqual,
     TwoSampleMean,
+    TwoSampleMeanInferior,
+    TwoSampleMeanSuperior,
+    TwoSampleMeanEqual,
+    TwoSampleProp,
+    TwoSamplePropInferior,
+    TwoSamplePropSuperior,
+    TwoSamplePropEqual,
     McNemarProp
 
 # Export functions
@@ -45,6 +52,13 @@ include("OneSampleTest/OneSamplePropInferior.jl")
 include("OneSampleTest/OneSamplePropSuperior.jl")
 include("OneSampleTest/OneSamplePropEqual.jl")
 include("TwoSampleTest/TwoSampleMean.jl")
+include("TwoSampleTest/TwoSampleMeanInferior.jl")
+include("TwoSampleTest/TwoSampleMeanSuperior.jl")
+include("TwoSampleTest/TwoSampleMeanEqual.jl")
+include("TwoSampleTest/TwoSampleProp.jl")
+include("TwoSampleTest/TwoSamplePropInferior.jl")
+include("TwoSampleTest/TwoSamplePropSuperior.jl")
+include("TwoSampleTest/TwoSamplePropEqual.jl")
 include("TwoSampleTest/McNemarProp.jl")
 # include("PrintTrialSSResult.jl")
 

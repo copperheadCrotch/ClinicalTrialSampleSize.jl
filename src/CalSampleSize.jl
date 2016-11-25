@@ -14,7 +14,7 @@ Arguments
 function sample_size{T <: TrialTest}(
     test::T;
     power::Real = nothing,
-    std::Union{Real, Tuple{Real}, Void} = nothing,
+    std::Union{Real, Tuple{Real, Real}, Void} = nothing,
     alpha::Real = 0.05,
     side::String = "two",
 )

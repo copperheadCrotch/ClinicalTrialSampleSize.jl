@@ -13,7 +13,7 @@ Arguments
 
 * `mu0`: Mean under null hypothesis
 
-* `delta`: Non-inferiority/Superiority Margin
+* `delta`: Superiority Margin
 
 Fields
 ------
@@ -33,9 +33,9 @@ type OneSampleMeanEqual <: TrialTest
 
         end # end if
 
-        if !(-Inf < delta < Inf)
+        if !(0 <= delta < Inf)
 
-            error("The non-inferiority/superiority margin δ must be in (Inf , Inf)")
+            error("The superiority margin δ must be in [0 , Inf)")
 
         end # end if
         new(mu1, mu0, delta)
@@ -48,7 +48,7 @@ end # end type
 # One-sample equivalence test for mean
 function hypotheses{T <: OneSampleMeanEqual}(test::T, n::Real, std::Real, alpha::Real, side::String)
 
-    diff = abs(test.mu1 - test.mu0) - test.delta
+    diff = abs(test.mu1 - test.mu0) - abs(test.delta)
     se = sqrt(1 / n) * std
     z = diff / se
     p = 2 * (cdf(ZDIST, z - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -z - quantile(ZDIST, 1 - alpha))) - 1

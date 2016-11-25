@@ -15,7 +15,7 @@ Arguments
 function power{T <: TrialTest}(
     test::T;
     n::Union{Real} = nothing,
-    std::Union{Real, Tuple{Real}, Void} = nothing,
+    std::Union{Real, Tuple{Real, Real}, Void} = nothing,
     alpha::Real = 0.05,
     side::String = "two",
 )
@@ -46,7 +46,7 @@ Arguments
 function analytic_power{T <: TrialTest}(
     test::T;
     n::Union{Real} = nothing,
-    std::Union{Real, Tuple{Real}, Void} = nothing,
+    std::Union{Real, Tuple{Real, Real}, Void} = nothing,
     alpha::Real = 0.05,
     side::String = "two",
 )

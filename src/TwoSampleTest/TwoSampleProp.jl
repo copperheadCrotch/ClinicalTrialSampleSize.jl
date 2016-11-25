@@ -13,7 +13,7 @@ Arguments
 
 * `p2`: Proportion of group 2
 
-* `k`: Ratio of the groups, k = n(group1) / n(group 2)
+* `k`: Allocation ratio of the groups, k = n(group1) / n(group 2)
 
 Fields
 ------
@@ -35,7 +35,7 @@ type TwoSampleProp <: TrialTest
 
         if !(0 < k < Inf)
 
-            error("Sampling ratio must be in (0, Inf)")
+            error("Allocation ratio must be in (0, Inf)")
 
         end # end if
 
@@ -50,7 +50,7 @@ end # function
 function hypotheses{T <: TwoSampleProp}(test::T, n::Real, std::Void, alpha::Real, side::String)
 
     diff = test.p1 - test.p2
-    se = sqrt(1 / n * test.p1 * (1 - test.p1) + 1 / (k * n) * test.p2 * (1 - test.p2))
+    se = sqrt(1 / (test.k * n) * test.p1 * (1 - test.p1) + 1 / n * test.p2 * (1 - test.p2))
     z = diff / se
     if side == "two"
 

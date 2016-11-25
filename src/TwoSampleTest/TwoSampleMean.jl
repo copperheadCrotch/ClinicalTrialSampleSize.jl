@@ -13,7 +13,7 @@ Arguments
 
 * `mu2`: Mean of group 2
 
-* `k`: Ratio of the groups, k = n(group1) / n(group 2)
+* `k`: Allocation ratio of the groups, k = n(group1) / n(group 2)
 
 Fields
 ------
@@ -35,7 +35,7 @@ type TwoSampleMean <: TrialTest
 
         if !(0 < k < Inf)
 
-            error("Sampling ratio must be in (0, Inf)")
+            error("Allocation ratio must be in (0, Inf)")
 
         end # end if
         new(mu1, mu2, k)
@@ -49,7 +49,7 @@ end # end type
 function hypotheses{T <: TwoSampleMean}(test::T, n::Real, std::Real, alpha::Real, side::String)
 
     diff = test.mu1 - test.mu2
-    se = sqrt(1 / n + 1 / (k * n)) * std
+    se = sqrt(1 / n + 1 / (test.k * n)) * std
     z = diff / se
     if side == "two"
 
@@ -67,10 +67,10 @@ end # end function
 
 
 # Two-sample test for mean, if the standard devaition is not the same
-function hypotheses{T <: TwoSampleMean}(test::T, n::Real, std::Tuple{Real}, alpha::Real, side::String)
+function hypotheses{T <: TwoSampleMean}(test::T, n::Real, std::Tuple{Real, Real}, alpha::Real, side::String)
 
     diff = test.mu1 - test.mu2
-    se = sqrt(std[1] / n + std[2] / (k * n))
+    se = sqrt(std[1] ^ 2 / (test.k * n) + std[2] ^ 2 / n)
     z = diff / se
     if side == "two"
 

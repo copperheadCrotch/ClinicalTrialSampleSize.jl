@@ -13,9 +13,9 @@ Arguments
 
 * `p2`: Proportion of group 2
 
-* `k`: Ratio of the groups, k = n(group1) / n(group 2)
+* `k`: Allocation ratio of the groups, k = n(group1) / n(group 2)
 
-* `delta`: Non-inferiority/Superiority Margin
+* `delta`: Superiority Margin
 
 Fields
 ------
@@ -38,13 +38,13 @@ type TwoSamplePropEqual <: TrialTest
 
         if !(0 < k < Inf)
 
-            error("Sampling ratio must be in (0, Inf)")
+            error("Allocation ratio must be in (0, Inf)")
 
         end # end if
 
-        if !(-1 < delta < 1)
+        if !(0 <= delta < 1)
 
-            error("The non-inferiority/superiority margin δ must be in (-1 , 1)")
+            error("The superiority margin δ must be in [0, 1)")
 
         end # end if
 
@@ -59,7 +59,7 @@ end # function
 function hypotheses{T <: TwoSamplePropEqual}(test::T, n::Real, std::Void, alpha::Real, side::String)
 
     diff = abs(test.p1 - test.p2) - delta
-    se = sqrt(1 / n * test.p1 * (1 - test.p1) + 1 / (k * n) * test.p2 * (1 - test.p2))
+    se = sqrt(1 / (test.k * n) * test.p1 * (1 - test.p1) + 1 / n * test.p2 * (1 - test.p2))
     z = diff / se
     p = 2 * (cdf(ZDIST, z - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -z - quantile(ZDIST, 1 - alpha))) - 1
     return p

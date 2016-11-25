@@ -3,6 +3,8 @@ using Base.Test
 
 # OneSampleMean
 # Constructor: OneSampleMean()
+@test_throws ErrorException OneSampleMean(-Inf, Inf)
+
 params = (
     (OneSampleMean(3, 2), 7.849, 0.8, 1, 0.05, "two"),
     (OneSampleMean(3, 2.5), 70.640, 0.8, 1.5, 0.05, "two"),
@@ -24,6 +26,11 @@ end # end for
 
 # One-sample non-inferiority/superiority for mean
 # Constructor: OneSampleMeanInferior/Superior
+@test_throws ErrorException OneSampleMeanInferior(-Inf, Inf, -1)
+@test_throws ErrorException OneSampleMeanInferior(30, 35, 10)
+@test_throws ErrorException OneSampleMeanSuperior(-Inf, Inf, 1)
+@test_throws ErrorException OneSampleMeanSuperior(35, 30, -10)
+
 params = (
     (OneSampleMeanInferior(2, 2, -1), 6.183, 0.8, 1, 0.05),
     (OneSampleMeanInferior(1.9, 2.5, -1), 9.660, 0.8, 0.5, 0.05),
@@ -46,6 +53,9 @@ end # end for
 
 # One-sample equivalence for mean
 # Constructor: OneSampleMeanEqual()
+@test_throws ErrorException OneSampleMeanEqual(-Inf, Inf, 1)
+@test_throws ErrorException OneSampleMeanEqual(30, 30, -1)
+
 params = (
     (OneSampleMeanEqual(2, 2, 0.3), 95.154, 0.8, 1, 0.05),
     (OneSampleMeanEqual(1.94, 1.95, 0), 5945.895, 0.85, 0.25, 0.05),
@@ -65,6 +75,8 @@ end # end for
 
 # One-sample proportion
 # Constructor: OneSampleProp()
+@test_throws ErrorException OneSampleProp(-1.2, 1.2)
+
 params = (
     (OneSampleProp(0.5, 0.2), 21.802, 0.8, 0.05, "two"),
     (OneSampleProp(0.9, 0.4), 3.232, 0.85, 0.05, "two"),
@@ -86,6 +98,11 @@ end # end for
 
 # One-sample non-inferiority/superiority proportion
 # Constructor: OneSamplePropInferior/Superior
+@test_throws ErrorException OneSamplePropInferior(-1.2, 1.2, 0)
+@test_throws ErrorException OneSamplePropInferior(0.3, 0.2, 1)
+@test_throws ErrorException OneSamplePropSuperior(1.3, 0.3, 0)
+@test_throws ErrorException OneSamplePropSuperior(0.4, 0.2, 1.2)
+
 params = (
     (OneSamplePropInferior(0.25, 0.3, -0.06), 11592.29, 0.8, 0.05),
     (OneSamplePropInferior(0.71, 0.8, -0.05), 691.445, 0.85, 0.1),
@@ -108,6 +125,9 @@ end # end for
 
 # One-sample equivalence proportion
 # Constructor: OneSamplePropEqual
+@test_throws ErrorException OneSamplePropEqual(1.9, 1.2, 0.1)
+@test_throws ErrorException OneSamplePropEqual(0.2, 0.2, -1)
+
 params = (
     (OneSamplePropEqual(0.35, 0.3, 0.06), 19482.75, 0.8, 0.05),
     (OneSamplePropEqual(0.85, 0.8, 0.1), 377.619, 0.85, 0.1),

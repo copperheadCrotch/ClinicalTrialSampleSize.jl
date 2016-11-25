@@ -13,7 +13,7 @@ Arguments
 
 * `p0`: Proportion under null hypothesis
 
-* `delta`: Non-inferiority/Superiority Margin
+* `delta`: Superiority Margin
 
 Fields
 ------
@@ -33,9 +33,9 @@ type OneSamplePropEqual <: TrialTest
 
         end # end if
 
-        if !(-1 < delta < 1)
+        if !(0 < delta < 1)
 
-            error("The non-inferiority/superiority margin δ must be in (-1 , 1)")
+            error("The superiority margin δ must be in (0 , 1)")
 
         end # end if
         new(p1, p0, delta)
