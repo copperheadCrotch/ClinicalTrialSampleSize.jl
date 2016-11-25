@@ -1,6 +1,6 @@
 __precompile__()
 
-module TrialSampleSize
+module ClinicalTrialSampleSize
 
 using Distributions
 using DocStringExtensions
