@@ -48,7 +48,7 @@ function hypotheses{T <: OneSampleProp}(test::T, n::Real, std::Void, alpha::Real
 
     else
 
-        p = cdf(ZDIST, sqrt(test.p0 * (1 - test.p0) / (test.p1 * (1 - test.p1))) * (abs(z) - quantile(ZDIST, 1 - alpha)))
+        p = cdf(ZDIST, abs(z) - sqrt(test.p0 * (1 - test.p0) / (test.p1 * (1 - test.p1))) * quantile(ZDIST, 1 - alpha))
 
     end # end if
     return p

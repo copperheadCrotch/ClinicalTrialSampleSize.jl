@@ -27,7 +27,7 @@ type OneSamplePropSuperior <: TrialTest
     # Validator
     function OneSamplePropSuperior(p1, p0, delta)
 
-        if !((0 < mu1 < 1) & (0 < mu0 < 1))
+        if !((0 < p1 < 1) & (0 < p0 < 1))
 
             error("Proportion value must be in (0, 1)")
 
