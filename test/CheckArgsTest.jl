@@ -8,8 +8,8 @@ power(TwoSampleProp(0.9, 0.5, 1), std = 1, n = 20, alpha = 0.05)
 @test_throws ErrorException power(TwoSampleMean(0.9, 0.5, 1), n = 20, std = -1,  alpha = 0.05)
 @test_throws ErrorException power(TwoSampleMean(0.9, 0.5, 1), n = 20, alpha = 0.05)
 @test_throws ErrorException power(TwoSampleMean(0.9, 0.5, 1), n = 20, std = (-0.02, -0.03), alpha = 0.05)
-@test_throws ErrorException power(OneSampleMean(0, 9), n = 1, std = 1, alpha = 1.5)
-@test_throws ErrorException power(OneSampleMean(0, 9), n = 1, std = 1, alpha = 0.05, side = "greater")
+@test_throws ErrorException power(OneSampleMean(0, 9), n = 25, std = 1, alpha = 1.5)
+@test_throws ErrorException power(OneSampleMean(0, 9), n = 10, std = 1, alpha = 0.05, side = "greater")
 
 # test for sample size calculations
 @test_throws ErrorException sample_size(OneSampleMean(0, 9), power = 1.2, std = 1)
