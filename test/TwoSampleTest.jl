@@ -94,7 +94,6 @@ for (test, n, p, alpha, side) in params
         p_est = power(test; n = n, alpha = alpha, side = side)
         n_est = sample_size(test; power = p, alpha = alpha, side = side)
 
-        println(p_est)
         @test abs(p_est - p) < 1e-3
         @test abs(n_est - n) < 1
 
@@ -103,18 +102,18 @@ end # end for
 
 # Two-sample non-inferiority/superiority proportion
 # Constructor: TwoSamplePropInferior/Superior
-@test_throws ErrorException TwoSamplePropInferior(-1.2, 1.2, 0)
-@test_throws ErrorException TwoSamplePropInferior(0.3, 0.2, 1)
-@test_throws ErrorException TwoSamplePropSuperior(1.3, 0.3, 0)
-@test_throws ErrorException TwoSamplePropSuperior(0.4, 0.2, 1.2)
+@test_throws ErrorException TwoSamplePropInferior(-1.2, 1.2, 1, 0)
+@test_throws ErrorException TwoSamplePropInferior(0.3, 0.2, -2, -0.3)
+@test_throws ErrorException TwoSamplePropInferior(0.3, 0.2, 1, 0.1)
+@test_throws ErrorException TwoSamplePropSuperior(1.1, 0.3, 1, 0)
+@test_throws ErrorException TwoSamplePropSuperior(0.4, 0.2, -1, 0.2)
+@test_throws ErrorException TwoSamplePropSuperior(0.4, 0.2, 1, -0.2)
 
 params = (
-    (OneSamplePropInferior(0.25, 0.3, -0.06), 11592.29, 0.8, 0.05),
-    (OneSamplePropInferior(0.71, 0.8, -0.05), 691.445, 0.85, 0.1),
-    (OneSamplePropInferior(0.4, 0.4, -0.02), 5138.308, 0.95, 0.1),
-    (OneSamplePropSuperior(0.7, 0.5, 0.1), 129.834, 0.8, 0.05),
-    (OneSamplePropSuperior(0.32, 0.27, 0.03), 2922.942, 0.85, 0.1),
-    (OneSamplePropSuperior(0.5, 0.44, 0.2), 57.2, 0.9, 0.2),
+    (TwoSamplePropInferior(0.25, 0.3, 1, -0.06), 24575.66, 0.8, 0.05),
+    (TwoSamplePropInferior(0.71, 0.8, 2, -0.05), 883.028, 0.85, 0.1),
+    (TwoSamplePropSuperior(0.7, 0.5, 1, 0.1), 393.937, 0.9, 0.05),
+    (TwoSamplePropSuperior(0.32, 0.27, 1.5, 0.03), 3852, 0.8, 0.1),
 )
 
 for (test, n, p, alpha) in params
@@ -127,16 +126,17 @@ for (test, n, p, alpha) in params
 
 end # end for
 
-#=
-# One-sample equivalence proportion
-# Constructor: OneSamplePropEqual
-@test_throws ErrorException OneSamplePropEqual(1.9, 1.2, 0.1)
-@test_throws ErrorException OneSamplePropEqual(0.2, 0.2, -1)
+
+# Two-sample equivalence proportion
+# Constructor: TwoSamplePropEqual
+@test_throws ErrorException TwoSamplePropEqual(1.9, 1.2, 1, 0.1)
+@test_throws ErrorException TwoSamplePropEqual(0.2, 0.2, -1, 0)
+@test_throws ErrorException TwoSamplePropEqual(0.2, 0.2, 1, -2)
 
 params = (
-    (OneSamplePropEqual(0.35, 0.3, 0.06), 19482.75, 0.8, 0.05),
-    (OneSamplePropEqual(0.85, 0.8, 0.1), 377.619, 0.85, 0.1),
-    (OneSamplePropEqual(0.4, 0.4, 0.02), 6304.454, 0.95, 0.1),
+    (TwoSamplePropEqual(0.35, 0.3, 1, 0.06), 37466.83, 0.8, 0.05),
+    (TwoSamplePropEqual(0.85, 0.8, 1, 0.1), 851.494, 0.85, 0.1),
+    (TwoSamplePropEqual(0.4, 0.4, 2, 0.02), 9456.681, 0.95, 0.1),
 )
 
 for (test, n, p, alpha) in params
@@ -148,5 +148,5 @@ for (test, n, p, alpha) in params
         @test abs(n_est - n) < 1
 
 end # end for
-=#
+
 return true
