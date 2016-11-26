@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>/</loc>
+     <loc>http://contatp.github.io/ClinicalTrialSampleSize.jl/</loc>
      <lastmod>2016-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -12,7 +12,7 @@
     
         
     <url>
-     <loc>/man/usage/</loc>
+     <loc>http://contatp.github.io/ClinicalTrialSampleSize.jl/man/usage/</loc>
      <lastmod>2016-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -22,7 +22,7 @@
     
         
     <url>
-     <loc>/man/command/</loc>
+     <loc>http://contatp.github.io/ClinicalTrialSampleSize.jl/man/command/</loc>
      <lastmod>2016-11-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
