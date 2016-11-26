@@ -1,4 +1,4 @@
-### Usage
+## Usage
 
 The package supports the power/sample size calculation for clinical trials.
 
