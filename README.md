@@ -6,7 +6,7 @@ ClinicalTrialSampleSize
 [![codecov.io](http://codecov.io/github/ContaTP/ClinicalTrialSampleSize.jl/coverage.svg?branch=master)](http://codecov.io/github/ContaTP/ClinicalTrialSampleSize.jl?branch=master)
 
 
-Julia package to calculate the sample size for different clinical trial design.
+Julia package to calculate power and sample size for different clinical trial designs.
 
 # Dependencies
 
