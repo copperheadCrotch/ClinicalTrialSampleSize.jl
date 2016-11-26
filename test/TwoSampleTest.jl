@@ -113,7 +113,7 @@ params = (
     (TwoSamplePropInferior(0.25, 0.3, 1, -0.06), 24575.66, 0.8, 0.05),
     (TwoSamplePropInferior(0.71, 0.8, 2, -0.05), 883.028, 0.85, 0.1),
     (TwoSamplePropSuperior(0.7, 0.5, 1, 0.1), 393.937, 0.9, 0.05),
-    (TwoSamplePropSuperior(0.32, 0.27, 1.5, 0.03), 3852, 0.8, 0.1),
+    (TwoSamplePropSuperior(0.32, 0.27, 1.5, 0.01), 1149.05, 0.85, 0.1),
 )
 
 for (test, n, p, alpha) in params
@@ -143,6 +143,27 @@ for (test, n, p, alpha) in params
 
         p_est = power(test; n = n, alpha = alpha)
         n_est = sample_size(test; power = p, alpha = alpha)
+
+        @test abs(p_est - p) < 1e-3
+        @test abs(n_est - n) < 1
+
+end # end for
+
+
+# McNemar's paired test
+# Constructor: McNemarProp(p1, p2)
+@test_throws ErrorException McNemarProp(1.9, 0.3)
+
+params = (
+    (McNemarProp(0.35, 0.5), 294.144, 0.8, 0.05, "two"),
+    (McNemarProp(0.85, 0.8), 4742.158, 0.85, 0.1, "two"),
+    (McNemarProp(0.4, 0.2), 123.608, 0.95, 0.1, "one"),
+)
+
+for (test, n, p, alpha, side) in params
+
+        p_est = power(test; n = n, alpha = alpha, side = side)
+        n_est = sample_size(test; power = p, alpha = alpha, side = side)
 
         @test abs(p_est - p) < 1e-3
         @test abs(n_est - n) < 1

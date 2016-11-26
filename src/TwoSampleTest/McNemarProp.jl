@@ -39,17 +39,16 @@ end # function
 # Two sample test for proportion
 function hypotheses{T <: McNemarProp}(test::T, n::Real, std::Void, alpha::Real, side::String)
 
-    pdisc = p1 + p2
-    pdiff = p2 - p1
+    pdisc = test.p1 + test.p2
+    pdiff = test.p2 - test.p1
     if side == "two"
-      x1=( pdiff*sqrt(n)-qnorm(1-alpha/2)*sqrt(pdisc))/sqrt(pdisc-pdiff^2);
-      x2=(-pdiff*sqrt(n)-qnorm(1-alpha/2)*sqrt(pdisc))/sqrt(pdisc-pdiff^2);
+
         p = cdf(ZDIST, (pdiff * sqrt(n) - quantile(ZDIST, 1 - alpha / 2) * sqrt(pdisc)) / sqrt(pdisc - pdiff ^ 2)) +
             cdf(ZDIST, (-pdiff * sqrt(n) - quantile(ZDIST, 1 - alpha / 2) * sqrt(pdisc)) / sqrt(pdisc - pdiff ^ 2))
 
     else
 
-      p = cdf(ZDIST, (abs(pdiff) * sqrt(n) - quantile(ZDIST, 1 - alpha) * sqrt(pdisc)) / sqrt(pdisc - pdiff ^ 2))
+        p = cdf(ZDIST, (abs(pdiff) * sqrt(n) - quantile(ZDIST, 1 - alpha) * sqrt(pdisc)) / sqrt(pdisc - pdiff ^ 2))
 
     end # end if
     return p
