@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Zhenning Yu">
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Command - ClinicalTrialSampleSize</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../assets/Documenter.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../..">ClinicalTrialSampleSize</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="../..">Introduction</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Usage <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../usage/">Usage</a>
+</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Index <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li class="active">
+    <a href="./">Command</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../usage/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li class="disabled">
+                        <a rel="prev" >
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ContaTP/ClinicalTrialSampleSize.jl">
+                                <i class="fa fa-github"></i>GitHub
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#index">Index</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><a id='Index-1'></a></p>
+<h3 id="index">Index</h3>
+<ul>
+<li><a href="./#ClinicalTrialSampleSize.McNemarProp"><code>ClinicalTrialSampleSize.McNemarProp</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSampleMean"><code>ClinicalTrialSampleSize.OneSampleMean</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSampleMeanEqual"><code>ClinicalTrialSampleSize.OneSampleMeanEqual</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSampleMeanInferior"><code>ClinicalTrialSampleSize.OneSampleMeanInferior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSampleMeanSuperior"><code>ClinicalTrialSampleSize.OneSampleMeanSuperior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSampleProp"><code>ClinicalTrialSampleSize.OneSampleProp</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSamplePropEqual"><code>ClinicalTrialSampleSize.OneSamplePropEqual</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSamplePropInferior"><code>ClinicalTrialSampleSize.OneSamplePropInferior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.OneSamplePropSuperior"><code>ClinicalTrialSampleSize.OneSamplePropSuperior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSampleMean"><code>ClinicalTrialSampleSize.TwoSampleMean</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSampleMeanEqual"><code>ClinicalTrialSampleSize.TwoSampleMeanEqual</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSampleMeanInferior"><code>ClinicalTrialSampleSize.TwoSampleMeanInferior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSampleMeanSuperior"><code>ClinicalTrialSampleSize.TwoSampleMeanSuperior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSampleProp"><code>ClinicalTrialSampleSize.TwoSampleProp</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSamplePropEqual"><code>ClinicalTrialSampleSize.TwoSamplePropEqual</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSamplePropInferior"><code>ClinicalTrialSampleSize.TwoSamplePropInferior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.TwoSamplePropSuperior"><code>ClinicalTrialSampleSize.TwoSamplePropSuperior</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.analytic_power-Tuple{T&lt;:ClinicalTrialSampleSize.TrialTest}"><code>ClinicalTrialSampleSize.analytic_power</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.power-Tuple{T&lt;:ClinicalTrialSampleSize.TrialTest}"><code>ClinicalTrialSampleSize.power</code></a></li>
+<li><a href="./#ClinicalTrialSampleSize.sample_size-Tuple{T&lt;:ClinicalTrialSampleSize.TrialTest}"><code>ClinicalTrialSampleSize.sample_size</code></a></li>
+</ul>
+<p><a id='ClinicalTrialSampleSize.McNemarProp' href='#ClinicalTrialSampleSize.McNemarProp'>#</a>
+<strong><code>ClinicalTrialSampleSize.McNemarProp</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type McNemarProp &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Paired sample test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>McNemarProp(p1::Real, p2::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: Proportion for cell of no event - event</li>
+<li><code>p2</code>: Proportion for cell of event - no event</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p2</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/McNemarProp.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSampleMean' href='#ClinicalTrialSampleSize.OneSampleMean'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSampleMean</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSampleMean &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample test for mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSampleMean(mu1::Real, mu0::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: True mean</li>
+<li><code>mu0</code>: Mean under null hypothesis</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu0</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSampleMean.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSampleMeanEqual' href='#ClinicalTrialSampleSize.OneSampleMeanEqual'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSampleMeanEqual</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSampleMeanEqual &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample equivalence test for mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSampleMeanEqual(mu1::Real, mu0::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: True mean</li>
+<li><code>mu0</code>: Mean under null hypothesis</li>
+<li><code>delta</code>: Superiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu0</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSampleMeanEqual.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSampleMeanInferior' href='#ClinicalTrialSampleSize.OneSampleMeanInferior'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSampleMeanInferior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSampleMeanInferior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample non-inferiority test for mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSampleMeanInferior(mu1::Real, mu0::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: True mean</li>
+<li><code>mu0</code>: Mean under null hypothesis</li>
+<li><code>delta</code>: Non-inferiority margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu0</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSampleMeanInferior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSampleMeanSuperior' href='#ClinicalTrialSampleSize.OneSampleMeanSuperior'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSampleMeanSuperior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSampleMeanSuperior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample superiority test for Mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSampleMeanSuperior(mu1::Real, mu0::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: True mean</li>
+<li><code>mu0</code>: Mean under null hypothesis</li>
+<li><code>delta</code>: Superiority margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu0</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSampleMeanSuperior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSampleProp' href='#ClinicalTrialSampleSize.OneSampleProp'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSampleProp</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSampleProp &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSampleProp(p1::Real, p0::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: True proportion</li>
+<li><code>p0</code>: Proportion under null hypothesis</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p0</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSampleProp.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSamplePropEqual' href='#ClinicalTrialSampleSize.OneSamplePropEqual'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSamplePropEqual</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSamplePropEqual &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample equivalence test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSamplePropEqual(p1::Real, p0::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: True proportion</li>
+<li><code>p0</code>: Proportion under null hypothesis</li>
+<li><code>delta</code>: Superiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p0</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSamplePropEqual.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSamplePropInferior' href='#ClinicalTrialSampleSize.OneSamplePropInferior'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSamplePropInferior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSamplePropInferior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample non-inferiority test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSamplePropInferior(p1::Real, p0::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: True proportion</li>
+<li><code>p0</code>: Proportion under null hypothesis</li>
+<li><code>delta</code>: Non-inferiority margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p0</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSamplePropInferior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.OneSamplePropSuperior' href='#ClinicalTrialSampleSize.OneSamplePropSuperior'>#</a>
+<strong><code>ClinicalTrialSampleSize.OneSamplePropSuperior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type OneSamplePropSuperior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>One sample superiority test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>OneSamplePropSuperior(p1::Real, p0::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: True proportion</li>
+<li><code>p0</code>: Proportion under null hypothesis</li>
+<li><code>delta</code>: Superiority margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p0</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/OneSampleTest/OneSamplePropSuperior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSampleMean' href='#ClinicalTrialSampleSize.TwoSampleMean'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSampleMean</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSampleMean &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>two sample test for mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSampleMean(mu1::Real, mu2::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: Mean of group 1</li>
+<li><code>mu2</code>: Mean of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu2</code></li>
+<li><code>k</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSampleMean.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSampleMeanEqual' href='#ClinicalTrialSampleSize.TwoSampleMeanEqual'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSampleMeanEqual</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSampleMeanEqual &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample equivalence test for mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSampleMeanEqual(mu1::Real, mu2::Real, k::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: Mean of group 1</li>
+<li><code>mu2</code>: Mean of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+<li><code>delta</code>: Non-inferiority/Superiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu2</code></li>
+<li><code>k</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSampleMeanEqual.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSampleMeanInferior' href='#ClinicalTrialSampleSize.TwoSampleMeanInferior'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSampleMeanInferior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSampleMeanInferior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample non-inferiority test for Mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSampleMeanInferior(mu1::Real, mu2::Real, k::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: Mean of group 1</li>
+<li><code>mu2</code>: Mean of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+<li><code>delta</code>: Non-inferiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu2</code></li>
+<li><code>k</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSampleMeanInferior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSampleMeanSuperior' href='#ClinicalTrialSampleSize.TwoSampleMeanSuperior'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSampleMeanSuperior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSampleMeanSuperior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample superiority test for Mean</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSampleMeanSuperior(mu1::Real, mu2::Real, k::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>mu1</code>: Mean of group 1</li>
+<li><code>mu2</code>: Mean of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+<li><code>delta</code>: Superiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>mu1</code></li>
+<li><code>mu2</code></li>
+<li><code>k</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSampleMeanSuperior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSampleProp' href='#ClinicalTrialSampleSize.TwoSampleProp'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSampleProp</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSampleProp &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSampleProp(p1::Real, p2::Real, k::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: Proportion of group 1</li>
+<li><code>p2</code>: Proportion of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p2</code></li>
+<li><code>k</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSampleProp.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSamplePropEqual' href='#ClinicalTrialSampleSize.TwoSamplePropEqual'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSamplePropEqual</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSamplePropEqual &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample equivalence test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSamplePropEqual(p1::Real, p2::Real, k::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: Proportion of group 1</li>
+<li><code>p2</code>: Proportion of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+<li><code>delta</code>: Superiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p2</code></li>
+<li><code>k</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSamplePropEqual.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSamplePropInferior' href='#ClinicalTrialSampleSize.TwoSamplePropInferior'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSamplePropInferior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSamplePropInferior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample non-inferiority test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSamplePropInferior(p1::Real, p2::Real, k::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: Proportion of group 1</li>
+<li><code>p2</code>: Proportion of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+<li><code>delta</code>: Non-inferiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p2</code></li>
+<li><code>k</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSamplePropInferior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.TwoSamplePropSuperior' href='#ClinicalTrialSampleSize.TwoSamplePropSuperior'>#</a>
+<strong><code>ClinicalTrialSampleSize.TwoSamplePropSuperior</code></strong> &mdash; <em>Type</em>.</p>
+<pre class="codehilite"><code class="language-julia">type TwoSamplePropSuperior &lt;: ClinicalTrialSampleSize.TrialTest</code></pre>
+
+
+<p>Two sample superiority test for proportion</p>
+<p><strong>Constructors</strong></p>
+<ul>
+<li><code>TwoSamplePropSuperior(p1::Real, p2::Real, k::Real, delta::Real)</code></li>
+</ul>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>p1</code>: Proportion of group 1</li>
+<li><code>p2</code>: Proportion of group 2</li>
+<li><code>k</code>: Allocation ratio of the groups, k = n(group1) / n(group 2)</li>
+<li><code>delta</code>: Non-inferiority Margin</li>
+</ul>
+<p><strong>Fields</strong></p>
+<ul>
+<li><code>p1</code></li>
+<li><code>p2</code></li>
+<li><code>k</code></li>
+<li><code>delta</code></li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/TwoSampleTest/TwoSamplePropSuperior.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.analytic_power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}' href='#ClinicalTrialSampleSize.analytic_power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}'>#</a>
+<strong><code>ClinicalTrialSampleSize.analytic_power</code></strong> &mdash; <em>Method</em>.</p>
+<pre class="codehilite"><code class="language-julia">analytic_power(test)</code></pre>
+
+
+<p>Compute the power of the trial without checking arguments, given the sample size, desired type I error rate and effect size.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>Test</code> – The test for calculating the power</li>
+<li><code>n</code> – Sample size</li>
+<li><code>std</code> – Standard deviation</li>
+<li><code>alpha</code> – Desired type I error rate</li>
+<li><code>side</code> – Side of the test, "two" is two-sided, "one" is one-sided</li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/CalPower.jl#L32-L45' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}' href='#ClinicalTrialSampleSize.power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}'>#</a>
+<strong><code>ClinicalTrialSampleSize.power</code></strong> &mdash; <em>Method</em>.</p>
+<pre class="codehilite"><code class="language-julia">power(test)</code></pre>
+
+
+<p>Compute the power of the trial, given the sample size, desired type I error rate and effect size.</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>Test</code> – The test for calculating the power</li>
+<li><code>n</code> – Sample size</li>
+<li><code>std</code> – Standard deviation</li>
+<li><code>alpha</code> – Desired type I error rate</li>
+<li><code>side</code> – Side of the test, "two" is two-sided, "one" is one-sided</li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/CalPower.jl#L1-L14' class='documenter-source'>source</a><br></p>
+<p><a id='ClinicalTrialSampleSize.sample_size-Tuple{T<:ClinicalTrialSampleSize.TrialTest}' href='#ClinicalTrialSampleSize.sample_size-Tuple{T<:ClinicalTrialSampleSize.TrialTest}'>#</a>
+<strong><code>ClinicalTrialSampleSize.sample_size</code></strong> &mdash; <em>Method</em>.</p>
+<pre class="codehilite"><code class="language-julia">sample_size(test)</code></pre>
+
+
+<p>Compute the minimum sample size needed for the desired power, type I error rate and effect size</p>
+<p><strong>Arguments</strong></p>
+<ul>
+<li><code>Test</code> – The test for calculating the power</li>
+<li><code>std</code> – Standard deviation</li>
+<li><code>power</code> – Power</li>
+<li><code>alpha</code> – Desired type I error rate</li>
+<li><code>side</code> – Side of the test, "two" is two-sided, "one" is one-sided</li>
+</ul>
+<p><a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/36bab47ddc6e736bb165f9ab07082ba9379c9982/src/CalSampleSize.jl#L1' class='documenter-source'>source</a><br></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '../..';</script>
+        <script data-main="../../mkdocs/js/search.js" src="../../mkdocs/js/require.js"></script>
+        <script src="../../js/base.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+        <script src="../../assets/mathjaxhelper.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
