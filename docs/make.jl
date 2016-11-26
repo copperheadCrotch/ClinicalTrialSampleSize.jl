@@ -1,7 +1,16 @@
 using Documenter
 using ClinicalTrialSampleSize
 
-makedocs()
+makedocs(
+    modules = [ClinicalTrialSampleSize],
+    sitename = "ClinicalTrialSampleSize.jl",
+    pages = Any[
+        "Home" => "index.md",
+        "Usage" => "man/usage.md",
+        "Commands" => "man/command.md"
+    ],
+    doctest = false
+)
 
 deploydocs(
     repo = "https://github.com/ContaTP/ClinicalTrialSampleSize.jl.git",
