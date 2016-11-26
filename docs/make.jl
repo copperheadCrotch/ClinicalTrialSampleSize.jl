@@ -9,7 +9,7 @@ makedocs(
         "Usage" => "man/usage.md",
         "Commands" => "man/command.md"
     ],
-    doctest = true
+    doctest = false
 )
 
 deploydocs(
