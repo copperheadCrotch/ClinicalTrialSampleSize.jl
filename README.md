@@ -7,8 +7,10 @@ ClinicalTrialSampleSize
 
 Julia package to calculate power and sample size for different clinical trial designs.
 
+
 ### Documentation
 [![](https://img.shields.io/badge/docs-latest-blue.svg)](https://contatp.github.io/ClinicalTrialSampleSize.jl/latest)
+
 
 ### Dependencies
 
@@ -16,7 +18,9 @@ Julia package to calculate power and sample size for different clinical trial de
 * Roots.jl
 * DocStringExtensions.jl
 
+
 ### Support calculations
+
 
 | Sample        | Test          |
 | ------------- |:-------------:|
@@ -26,6 +30,7 @@ Julia package to calculate power and sample size for different clinical trial de
 Part of the work refers to John Myles White's work on [PowerAnalysis.jl](https://github.com/johnmyleswhite/PowerAnalysis.jl)
 
 ### References
+
 
 Rosner B. 2010. *Fundamentals of Biostatistics*. 7th Ed. Brooks/Cole
 
