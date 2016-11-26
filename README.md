@@ -5,6 +5,7 @@ ClinicalTrialSampleSize
 [![Coverage Status](https://coveralls.io/repos/github/ContaTP/ClinicalTrialSampleSize.jl/badge.svg?branch=master)](https://coveralls.io/github/ContaTP/ClinicalTrialSampleSize.jl?branch=master)
 [![codecov.io](http://codecov.io/github/ContaTP/ClinicalTrialSampleSize.jl/coverage.svg?branch=master)](http://codecov.io/github/ContaTP/ClinicalTrialSampleSize.jl?branch=master)
 
+[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://contatp.github.io/ClinicalTrialSampleSize.jl/latest)
 
 Julia package to calculate power and sample size for different clinical trial designs.
 
