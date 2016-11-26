@@ -3,14 +3,13 @@ using ClinicalTrialSampleSize
 
 makedocs(
     modules = [ClinicalTrialSampleSize],
-    format = Documenter.Formats.HTML,
     sitename = "ClinicalTrialSampleSize.jl",
     pages = Any[
         "Home" => "index.md",
         "Usage" => "man/usage.md",
         "Commands" => "man/command.md"
     ],
-    doctest = false
+    doctest = true
 )
 
 deploydocs(
