@@ -8,24 +8,22 @@ ClinicalTrialSampleSize
 
 Julia package to calculate power and sample size for different clinical trial designs.
 
-# Dependencies
+### Dependencies
 
 * Distributions.jl
 * Roots.jl
 * DocStringExtensions.jl
 
-# Support calculations
+### Support calculations
 
 | Sample        | Test          |
 | ------------- |:-------------:|
 | One-Sample    | Mean, Proportion, Non-inferiority, Superiority, Equivalence |
 | Two-Sample    | Mean, Proportion, Non-inferiority, Superiority, Equivalence, McNemar's |
 
-# Acknowledgements
-
 Part of the work refers to John Myles White's work on [PowerAnalysis.jl](https://github.com/johnmyleswhite/PowerAnalysis.jl)
 
-# References
+### References
 
 Rosner B. 2010. *Fundamentals of Biostatistics*. 7th Ed. Brooks/Cole
 
