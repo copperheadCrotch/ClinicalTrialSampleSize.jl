@@ -13,6 +13,7 @@ makedocs(
 )
 
 deploydocs(
+    deps   = Deps.pip("mkdocs", "python-markdown-math"),
     repo = "https://github.com/ContaTP/ClinicalTrialSampleSize.jl",
     target = "build",
     julia  = "0.5",
