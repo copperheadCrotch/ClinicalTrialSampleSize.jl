@@ -81,7 +81,7 @@ end # end for
 # Two-sample proportion
 # Constructor: TwoSampleProp()
 @test_throws ErrorException TwoSampleProp(-1.2, 1.2, 1)
-@test_throws ErrorException TwoSampleProp(-1.2, 1.2, -1)
+@test_throws ErrorException TwoSampleProp(0.3, 0.25, -1)
 
 params = (
     (TwoSampleProp(0.5, 0.2, 1), 35.756, 0.8, 0.05, "two"),
