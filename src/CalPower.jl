@@ -14,15 +14,15 @@ Arguments
 """
 function power{T <: TrialTest}(
     test::T;
-    n::Union{Real} = nothing,
+    n::Union{Real, Void} = nothing,
     std::Union{Real, Tuple{Real, Real}, Void} = nothing,
     alpha::Real = 0.05,
     side::String = "two",
 )
     # Transcode side
     side = lowercase(side)
-    # check_args(T, ns, diff, std, 0.8, alpha, side)
-
+    # Check arguments
+    check_args_power(test, n = n, std = std, alpha = alpha, side = side)
     # Calculate power
     return hypotheses(test, n, std, alpha, side)
 
@@ -45,15 +45,13 @@ Arguments
 """
 function analytic_power{T <: TrialTest}(
     test::T;
-    n::Union{Real} = nothing,
+    n::Union{Real, Void} = nothing,
     std::Union{Real, Tuple{Real, Real}, Void} = nothing,
     alpha::Real = 0.05,
     side::String = "two",
 )
     # Transcode side
     side = lowercase(side)
-    # check_args(T, ns, diff, std, 0.8, alpha, side)
-
     # Calculate power
     return hypotheses(test, n, std, alpha, side)
 

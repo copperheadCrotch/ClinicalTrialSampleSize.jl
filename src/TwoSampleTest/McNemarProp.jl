@@ -37,7 +37,7 @@ end # function
 
 
 # Two sample test for proportion
-function hypotheses{T <: McNemarProp}(test::T, n::Real, std::Void, alpha::Real, side::String)
+function hypotheses{T <: McNemarProp}(test::T, n::Real, std::Union{Real, Tuple{Real, Real}, Void}, alpha::Real, side::String)
 
     pdisc = test.p1 + test.p2
     pdiff = test.p2 - test.p1

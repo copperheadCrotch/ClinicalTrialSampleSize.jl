@@ -1,17 +1,10 @@
-"""
-$(SIGNATURES)
-
-# Details
-Check if the arguments are right
-"""
-function check_args(
-    T,
-    n::Union{Real, Tuple},
-    delta::Real,
-    std::Union{Real, Tuple},
-    power::Real,
-    alpha::Real,
-    side::String,
+# Check arguments for power calculation
+function check_args_power{T <: TrialTest}(
+    test::T;
+    n::Union{Real, Void} = nothing,
+    std::Union{Real, Tuple{Real, Real}, Void} = nothing,
+    alpha::Real = 0.05,
+    side::String = "two",
 )
 
     if isa(n, Real)
@@ -20,74 +13,133 @@ function check_args(
 
             error("sample size must be in [2.0, Inf)")
 
-        end
+        end # end if
 
     else
 
-        if !(2.0 <= min(n...) < Inf & max(n...) < Inf)
+        error("sample size must be specified")
 
-            error("sample sizes must both be in [2.0, Inf)")
+    end # end if
 
-        end
 
-    end
+    if isa(test, Union{OneSampleProp, OneSamplePropInferior, OneSamplePropSuperior,
+      OneSamplePropEqual, TwoSampleProp, TwoSamplePropInferior,
+      TwoSamplePropSuperior, TwoSamplePropEqual, McNemarProp})
 
-    if (typeof(T) == OneSampleProp) | (typeof(T) == TwoSampleProp)
+        if !isa(std, Void)
 
-        if !(-1 < delta < 1)
+            warn("standard deviation is not used in the calculations")
 
-            error("effect size must be in (-1, 1)")
+        end # end if
 
-        end
+    elseif isa(std, Real)
 
-    elseif !((-Inf < delta < 0) | (0 < delta < Inf))
+        if !(0.0 < std < Inf)
 
-        error("effective size cannot be 0")
+            error("standard deviation must be in (0.0, Inf)")
 
-    end
+        end # end if
 
-    #=
-    # For One sample
-    if (typeof(T) == OneSampleProp) | (typeof(T) == TwoSampleProp)
+    elseif isa(std, Tuple{Real, Real})
 
-        warn("σ is not used")
+        if !((min(std...) > 0.0) & (max(std...) < Inf))
 
-    elseif isa(σs, Real)
+            error("standard deviaitons must both be in (0.0, Inf)")
 
-        if !(0.0 < σs < Inf)
-
-            error("σ must be in (0.0, Inf)")
-
-        end
+        end # end if
 
     else
 
-        if !(0.0 < min(σs...) < Inf)
+        error("standard deviaiton must be specified")
 
-            error("σs must both be in (0.0, Inf)")
-
-        end
-
-    end
-    =#
-
-    # The power should between 0 and 1
-    if !(0.0 < power < 1.0)
-
-        error("power must be in (0.0, 1.0)")
-
-    end
+    end # end if
 
     # The alpha should between 0 and 1
     if !(0.0 < alpha < 1.0)
 
-        error("alpha must be in (0.0, 1.0)")
+        error("type I error rate must be in (0.0, 1.0)")
 
-    end
+    end # end if
 
     # The test should always be two-sided or one-sided
     if !in(side, ("two", "one"))
-        error("side must be in ('two', 'one')")
-    end
 
-end
+        error("side must be in 'two' or 'one'")
+
+    end # end if
+
+end # end function
+
+
+# Check arguments for sample size calculations
+function check_args_sample_size{T <: TrialTest}(
+    test::T;
+    power::Union{Real, Void} = nothing,
+    std::Union{Real, Tuple{Real, Real}, Void} = nothing,
+    alpha::Real = 0.05,
+    side::String = "two",
+)
+
+
+    if isa(power, Real)
+
+        # The power should between 0 and 1
+        if !(0.0 < power < 1.0)
+
+            error("power must be in (0.0, 1.0)")
+
+        end # end if
+
+    else
+
+        error("power must be specified")
+
+    end # end if
+
+    if isa(test, Union{OneSampleProp, OneSamplePropInferior, OneSamplePropSuperior,
+      OneSamplePropEqual, TwoSampleProp, TwoSamplePropInferior,
+      TwoSamplePropSuperior, TwoSamplePropEqual, McNemarProp})
+
+        if !isa(std, Void)
+
+            warn("standard deviation is not used in the calculations")
+
+        end # end if
+
+    elseif isa(std, Real)
+
+        if !(0.0 < std < Inf)
+
+            error("standard deviation must be in (0.0, Inf)")
+
+        end # end if
+
+    elseif isa(std, Tuple{Real, Real})
+
+        if !((min(std...) > 0.0) & (max(std...) < Inf))
+
+            error("standard deviaitons must both be in (0.0, Inf)")
+
+        end # end if
+
+    else
+
+        error("standard deviaiton must be specified")
+
+    end # end if
+
+    # The alpha should between 0 and 1
+    if !(0.0 < alpha < 1.0)
+
+        error("type I error rate must be in (0.0, 1.0)")
+
+    end # end if
+
+    # The test should always be two-sided or one-sided
+    if !in(side, ("two", "one"))
+
+        error("side must be in 'two' or 'one'")
+
+    end # end if
+
+end # end function

@@ -13,14 +13,16 @@ Arguments
 """
 function sample_size{T <: TrialTest}(
     test::T;
-    power::Real = nothing,
+    power::Union{Real, Void} = nothing,
     std::Union{Real, Tuple{Real, Real}, Void} = nothing,
     alpha::Real = 0.05,
     side::String = "two",
 )
     # Transcode side
     side = lowercase(side)
-    # check_args(T, 2, delta, std, power, alpha, side)
+    # Check arguments
+    check_args_sample_size(test, power = power, std = std, alpha = alpha, side = side)
+    # Calculate sample size
     gap(n::Real) = analytic_power(test, n = n, std = std, alpha = alpha, side = side) - power
     # Round to the minimum integer that is larger than the root
     return round(fzero(gap, 2, MAXSAMPLESIZE), RoundUp)

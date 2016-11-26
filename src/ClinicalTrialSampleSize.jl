@@ -43,6 +43,7 @@ const ZDIST = Normal(0, 1)
 
 include("CalPower.jl")
 include("CalSampleSize.jl")
+include("CheckArgs.jl")
 include("OneSampleTest/OneSampleMean.jl")
 include("OneSampleTest/OneSampleMeanInferior.jl")
 include("OneSampleTest/OneSampleMeanSuperior.jl")

@@ -47,7 +47,7 @@ end # function
 
 
 # Two sample test for proportion
-function hypotheses{T <: TwoSampleProp}(test::T, n::Real, std::Void, alpha::Real, side::String)
+function hypotheses{T <: TwoSampleProp}(test::T, n::Real, std::Union{Real, Tuple{Real, Real}, Void}, alpha::Real, side::String)
 
     diff = test.p1 - test.p2
     se = sqrt(1 / (test.k * n) * test.p1 * (1 - test.p1) + 1 / n * test.p2 * (1 - test.p2))

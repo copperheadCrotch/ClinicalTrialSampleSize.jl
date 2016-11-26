@@ -56,7 +56,7 @@ end # function
 
 
 # Two sample equivalence test for proportion
-function hypotheses{T <: TwoSamplePropEqual}(test::T, n::Real, std::Void, alpha::Real, side::String)
+function hypotheses{T <: TwoSamplePropEqual}(test::T, n::Real, std::Union{Real, Tuple{Real, Real}, Void}, alpha::Real, side::String)
 
     diff = abs(test.p1 - test.p2) - test.delta
     se = sqrt(1 / (test.k * n) * test.p1 * (1 - test.p1) + 1 / n * test.p2 * (1 - test.p2))
