@@ -2,7 +2,7 @@ site_name:           ClinicalTrialSampleSize
 repo_url:            https://github.com/ContaTP/ClinicalTrialSampleSize.jl
 site_description:    Calculate Sample Size/Power for Clinical Trials
 site_author:         Zhenning Yu
-theme:               cinder
+theme:               mkdocs
 
 markdown_extensions:
   - codehilite
