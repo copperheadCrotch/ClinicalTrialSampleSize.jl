@@ -50,7 +50,7 @@ Paired sample test for proportion
   * `p2`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/McNemarProp.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/McNemarProp.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSampleMean' href='#ClinicalTrialSampleSize.OneSampleMean'>#</a>
 **`ClinicalTrialSampleSize.OneSampleMean`** &mdash; *Type*.
@@ -78,7 +78,7 @@ One sample test for mean
   * `mu0`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSampleMean.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSampleMean.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSampleMeanEqual' href='#ClinicalTrialSampleSize.OneSampleMeanEqual'>#</a>
 **`ClinicalTrialSampleSize.OneSampleMeanEqual`** &mdash; *Type*.
@@ -108,7 +108,7 @@ One sample equivalence test for mean
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSampleMeanEqual.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSampleMeanEqual.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSampleMeanInferior' href='#ClinicalTrialSampleSize.OneSampleMeanInferior'>#</a>
 **`ClinicalTrialSampleSize.OneSampleMeanInferior`** &mdash; *Type*.
@@ -138,7 +138,7 @@ One sample non-inferiority test for mean
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSampleMeanInferior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSampleMeanInferior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSampleMeanSuperior' href='#ClinicalTrialSampleSize.OneSampleMeanSuperior'>#</a>
 **`ClinicalTrialSampleSize.OneSampleMeanSuperior`** &mdash; *Type*.
@@ -168,7 +168,7 @@ One sample superiority test for Mean
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSampleMeanSuperior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSampleMeanSuperior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSampleProp' href='#ClinicalTrialSampleSize.OneSampleProp'>#</a>
 **`ClinicalTrialSampleSize.OneSampleProp`** &mdash; *Type*.
@@ -196,7 +196,7 @@ One sample test for proportion
   * `p0`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSampleProp.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSampleProp.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSamplePropEqual' href='#ClinicalTrialSampleSize.OneSamplePropEqual'>#</a>
 **`ClinicalTrialSampleSize.OneSamplePropEqual`** &mdash; *Type*.
@@ -226,7 +226,7 @@ One sample equivalence test for proportion
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSamplePropEqual.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSamplePropEqual.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSamplePropInferior' href='#ClinicalTrialSampleSize.OneSamplePropInferior'>#</a>
 **`ClinicalTrialSampleSize.OneSamplePropInferior`** &mdash; *Type*.
@@ -256,7 +256,7 @@ One sample non-inferiority test for proportion
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSamplePropInferior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSamplePropInferior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.OneSamplePropSuperior' href='#ClinicalTrialSampleSize.OneSamplePropSuperior'>#</a>
 **`ClinicalTrialSampleSize.OneSamplePropSuperior`** &mdash; *Type*.
@@ -286,7 +286,7 @@ One sample superiority test for proportion
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/OneSampleTest/OneSamplePropSuperior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/OneSampleTest/OneSamplePropSuperior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSampleMean' href='#ClinicalTrialSampleSize.TwoSampleMean'>#</a>
 **`ClinicalTrialSampleSize.TwoSampleMean`** &mdash; *Type*.
@@ -316,7 +316,7 @@ two sample test for mean
   * `k`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSampleMean.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSampleMean.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSampleMeanEqual' href='#ClinicalTrialSampleSize.TwoSampleMeanEqual'>#</a>
 **`ClinicalTrialSampleSize.TwoSampleMeanEqual`** &mdash; *Type*.
@@ -348,7 +348,7 @@ Two sample equivalence test for mean
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSampleMeanEqual.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSampleMeanEqual.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSampleMeanInferior' href='#ClinicalTrialSampleSize.TwoSampleMeanInferior'>#</a>
 **`ClinicalTrialSampleSize.TwoSampleMeanInferior`** &mdash; *Type*.
@@ -380,7 +380,7 @@ Two sample non-inferiority test for Mean
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSampleMeanInferior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSampleMeanInferior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSampleMeanSuperior' href='#ClinicalTrialSampleSize.TwoSampleMeanSuperior'>#</a>
 **`ClinicalTrialSampleSize.TwoSampleMeanSuperior`** &mdash; *Type*.
@@ -412,7 +412,7 @@ Two sample superiority test for Mean
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSampleMeanSuperior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSampleMeanSuperior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSampleProp' href='#ClinicalTrialSampleSize.TwoSampleProp'>#</a>
 **`ClinicalTrialSampleSize.TwoSampleProp`** &mdash; *Type*.
@@ -442,7 +442,7 @@ Two sample test for proportion
   * `k`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSampleProp.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSampleProp.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSamplePropEqual' href='#ClinicalTrialSampleSize.TwoSamplePropEqual'>#</a>
 **`ClinicalTrialSampleSize.TwoSamplePropEqual`** &mdash; *Type*.
@@ -474,7 +474,7 @@ Two sample equivalence test for proportion
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSamplePropEqual.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSamplePropEqual.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSamplePropInferior' href='#ClinicalTrialSampleSize.TwoSamplePropInferior'>#</a>
 **`ClinicalTrialSampleSize.TwoSamplePropInferior`** &mdash; *Type*.
@@ -506,7 +506,7 @@ Two sample non-inferiority test for proportion
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSamplePropInferior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSamplePropInferior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.TwoSamplePropSuperior' href='#ClinicalTrialSampleSize.TwoSamplePropSuperior'>#</a>
 **`ClinicalTrialSampleSize.TwoSamplePropSuperior`** &mdash; *Type*.
@@ -538,7 +538,7 @@ Two sample superiority test for proportion
   * `delta`
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/TwoSampleTest/TwoSamplePropSuperior.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/TwoSampleTest/TwoSamplePropSuperior.jl#L1' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.analytic_power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}' href='#ClinicalTrialSampleSize.analytic_power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}'>#</a>
 **`ClinicalTrialSampleSize.analytic_power`** &mdash; *Method*.
@@ -561,7 +561,7 @@ Compute the power of the trial without checking arguments, given the sample size
   * `side` – Side of the test, "two" is two-sided, "one" is one-sided
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/CalPower.jl#L32-L45' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/CalPower.jl#L32-L45' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}' href='#ClinicalTrialSampleSize.power-Tuple{T<:ClinicalTrialSampleSize.TrialTest}'>#</a>
 **`ClinicalTrialSampleSize.power`** &mdash; *Method*.
@@ -584,7 +584,7 @@ Compute the power of the trial, given the sample size, desired type I error rate
   * `side` – Side of the test, "two" is two-sided, "one" is one-sided
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/CalPower.jl#L1-L14' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/CalPower.jl#L1-L14' class='documenter-source'>source</a><br>
 
 <a id='ClinicalTrialSampleSize.sample_size-Tuple{T<:ClinicalTrialSampleSize.TrialTest}' href='#ClinicalTrialSampleSize.sample_size-Tuple{T<:ClinicalTrialSampleSize.TrialTest}'>#</a>
 **`ClinicalTrialSampleSize.sample_size`** &mdash; *Method*.
@@ -607,5 +607,5 @@ Compute the minimum sample size needed for the desired power, type I error rate 
   * `side` – Side of the test, "two" is two-sided, "one" is one-sided
 
 
-<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/a15317eba6b0b0318dfad18602aa99baf84224c5/src/CalSampleSize.jl#L1' class='documenter-source'>source</a><br>
+<a target='_blank' href='https://github.com/ContaTP/ClinicalTrialSampleSize.jl/tree/9a167da85da5de644b3d472e0f47fde89ce74690/src/CalSampleSize.jl#L1' class='documenter-source'>source</a><br>
 
