@@ -5,7 +5,7 @@ Two sample superiority test for Mean
 
 Constructors
 ------------
-* `TwoSampleMeanSuperior(mu1::Real, mu2::Real, k::Real, delta::Real)`
+* `TwoSampleMeanSuperior(mu1::Real, mu2::Real, k::Real, delta::Real, stdunknown::Bool)`
 
 Arguments
 ---------
@@ -17,6 +17,10 @@ Arguments
 
 * `delta`: Superiority Margin
 
+* `stdunknown`: If the population standard deviation is known, default = false,
+when the population parameter is known, the power / sample size are calculated based
+on a standard normal distribution, otherwise a t distribution will be used
+
 Fields
 ------
 $(FIELDS)
@@ -26,28 +30,29 @@ type TwoSampleMeanSuperior <: TrialTest
     mu2::Real
     k::Real
     delta::Real
+    stdunknown::Bool
 
     # Validator
-    function TwoSampleMeanSuperior(mu1, mu2, k, delta)
+    function TwoSampleMeanSuperior(mu1, mu2, k, delta, stdunknown = false)
 
-      if !((-Inf < mu1 < Inf) & (-Inf < mu2 < Inf))
+        if !((-Inf < mu1 < Inf) & (-Inf < mu2 < Inf))
 
-          error("Mean value must be in (-Inf, Inf)")
+            error("Mean value must be in (-Inf, Inf)")
 
-      end # end if
+        end # end if
 
-      if !(0 < k < Inf)
+        if !(0 < k < Inf)
 
-          error("Allocation ratio must be in (0, Inf)")
+            error("Allocation ratio must be in (0, Inf)")
 
-      end # end if
+        end # end if
 
-      if !(0 <= delta < Inf)
+        if !(0 <= delta < Inf)
 
-          error("The superiority margin δ must be in [0 , Inf)")
+            error("The superiority margin δ must be in [0 , Inf)")
 
-      end # end if
-      new(mu1, mu2, k, delta)
+        end # end if
+        new(mu1, mu2, k, delta, stdunknown)
 
     end # end function
 
@@ -59,8 +64,17 @@ function hypotheses{T <: TwoSampleMeanSuperior}(test::T, n::Real, std::Real, alp
 
     diff = test.mu1 - test.mu2 - test.delta
     se = sqrt(1 / n + 1 / (test.k * n)) * std
-    z = diff / se
-    p =  cdf(ZDIST, z - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -z - quantile(ZDIST, 1 - alpha))
+    ts = diff / se
+    if test.stdunknown == false
+
+        p =  cdf(ZDIST, ts - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -ts - quantile(ZDIST, 1 - alpha))
+
+    else
+
+        p =  cdf(TDist(n + test.k * n - 2), ts - quantile(TDist(n + test.k * n - 2), 1 - alpha)) +
+             cdf(TDist(n + test.k * n - 2), -ts - quantile(TDist(n + test.k * n - 2), 1 - alpha))
+
+    end # end if
     # power_result(test, p)
     return p
 
@@ -72,8 +86,17 @@ function hypotheses{T <: TwoSampleMeanSuperior}(test::T, n::Real, std::Tuple{Rea
 
     diff = test.mu1 - test.mu2 - test.delta
     se = sqrt(std[1] ^ 2 / (test.k * n) + std[2] ^ 2 / n)
-    z = diff / se
-    p =  cdf(ZDIST, z - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -z - quantile(ZDIST, 1 - alpha))
+    ts = diff / se
+    if test.stdunknown == false
+
+        p =  cdf(ZDIST, ts - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -ts - quantile(ZDIST, 1 - alpha))
+
+    else
+
+        p =  cdf(TDist(n + test.k * n - 2), ts - quantile(TDist(n + test.k * n - 2), 1 - alpha)) +
+             cdf(TDist(n + test.k * n - 2), -ts - quantile(TDist(n + test.k * n - 2), 1 - alpha))
+
+    end # end if
     # power_result(test, p)
     return p
 

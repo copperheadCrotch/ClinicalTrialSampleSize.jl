@@ -5,7 +5,7 @@ One sample superiority test for Mean
 
 Constructors
 ------------
-* `OneSampleMeanSuperior(mu1::Real, mu0::Real, delta::Real)`
+* `OneSampleMeanSuperior(mu1::Real, mu0::Real, delta::Real, stdunknown::Bool)`
 
 Arguments
 ---------
@@ -15,6 +15,10 @@ Arguments
 
 * `delta`: Superiority margin
 
+* `stdunknown`: If the population standard deviation is known, default = false,
+when the population parameter is known, the power / sample size are calculated based
+on a standard normal distribution, otherwise a t distribution will be used
+
 Fields
 ------
 $(FIELDS)
@@ -23,9 +27,10 @@ type OneSampleMeanSuperior <: TrialTest
     mu1::Real
     mu0::Real
     delta::Real
+    stdunknown::Bool
 
     # Validator
-    function OneSampleMeanSuperior(mu1, mu0, delta)
+    function OneSampleMeanSuperior(mu1, mu0, delta, stdunknown)
 
         if !((-Inf < mu1 < Inf) & (-Inf < mu0 < Inf))
 
@@ -38,7 +43,7 @@ type OneSampleMeanSuperior <: TrialTest
             error("The superiority margin δ must be in [0, Inf)")
 
         end # end if
-        new(mu1, mu0, delta)
+        new(mu1, mu0, delta, stdunknown)
 
     end # end function
 
@@ -50,8 +55,16 @@ function hypotheses{T <: OneSampleMeanSuperior}(test::T, n::Real, std::Real, alp
 
     diff = test.mu1 - test.mu0 - test.delta
     se = sqrt(1 / n) * std
-    z = diff / se
-    p =  cdf(ZDIST, z - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -z - quantile(ZDIST, 1 - alpha))
+    ts = diff / se
+    if test.stdunknown == false
+
+        p = cdf(ZDIST, ts - quantile(ZDIST, 1 - alpha)) + cdf(ZDIST, -ts - quantile(ZDIST, 1 - alpha))
+
+    else
+
+        p = cdf(ZDIST, ts - quantile(TDist(n - 1), 1 - alpha)) + cdf(TDist(n - 1), -ts - quantile(TDist(n - 1), 1 - alpha))
+
+    end # end if
     # power_result(test, p)
     return p
 
