@@ -25,7 +25,7 @@ function sample_size{T <: TrialTest}(
     # Calculate sample size
     gap(n::Real) = analytic_power(test, n = n, std = std, alpha = alpha, side = side) - power
     # Round to the minimum integer that is larger than the root
-    print(fzero(gap, 2, MAXSAMPLESIZE))
+    # print(fzero(gap, 2, MAXSAMPLESIZE))
     return round(fzero(gap, 2, MAXSAMPLESIZE), RoundUp)
 
 end

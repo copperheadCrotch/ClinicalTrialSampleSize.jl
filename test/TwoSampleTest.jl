@@ -29,7 +29,7 @@ end # end for
 
 
 # Two-sample non-inferiority/superiority for mean
-# Constructor: TwoSampleMeanInferior/Superior
+# Constructor: TwoSampleMeanInferior/Superior()
 @test_throws ErrorException TwoSampleMeanInferior(-Inf, 5, 1, -1)
 @test_throws ErrorException TwoSampleMeanInferior(30, 35, -3, -3)
 @test_throws ErrorException TwoSampleMeanInferior(30, 35, 1, 3)
@@ -156,7 +156,7 @@ end # end for
 
 
 # McNemar's paired test
-# Constructor: McNemarProp(p1, p2)
+# Constructor: McNemarProp
 @test_throws ErrorException McNemarProp(1.9, 0.3)
 
 params = (
@@ -169,6 +169,28 @@ for (test, n, p, alpha, side) in params
 
         p_est = power(test; n = n, alpha = alpha, side = side)
         n_est = sample_size(test; power = p, alpha = alpha, side = side)
+
+        @test abs(p_est - p) < 1e-3
+        @test abs(n_est - n) < 1
+
+end # end for
+
+
+# Two sample crossover test for mean
+# Constructor: CrossoverMean
+@test_throws ErrorException CrossoverMean(-Inf, Inf)
+
+params = (
+    (CrossoverMean(4.35, 3.5, true), 136.774, 0.8, 5, 0.05, "two"),
+    (CrossoverMean(0.85, 0.8), 23487.195, 0.85, 3, 0.01, "two"),
+    (CrossoverMean(10.4, 10.2, true), 8.127, 0.9, 0.3, 0.1, "one"),
+    (CrossoverMean(1.4, 0.2), 11.894, 0.95, 2, 0.1, "one"),
+)
+
+for (test, n, p, std, alpha, side) in params
+
+        p_est = power(test; n = n, std = std, alpha = alpha, side = side)
+        n_est = sample_size(test; power = p, std = std, alpha = alpha, side = side)
 
         @test abs(p_est - p) < 1e-3
         @test abs(n_est - n) < 1

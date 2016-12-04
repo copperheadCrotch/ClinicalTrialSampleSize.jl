@@ -30,7 +30,8 @@ export
     TwoSamplePropInferior,
     TwoSamplePropSuperior,
     TwoSamplePropEqual,
-    McNemarProp
+    McNemarProp,
+    CrossoverMean
 
 # Export functions
 export
@@ -61,6 +62,7 @@ include("TwoSampleTest/TwoSamplePropInferior.jl")
 include("TwoSampleTest/TwoSamplePropSuperior.jl")
 include("TwoSampleTest/TwoSamplePropEqual.jl")
 include("TwoSampleTest/McNemarProp.jl")
+include("TwoSampleTest/CrossoverMean.jl")
 # include("PrintTrialSSResult.jl")
 
 end
