@@ -8,7 +8,7 @@ using Base.Test
 params = (
     (OneSampleMean(3, 2), 7.849, 0.8, 1, 0.05, "two"),
     (OneSampleMean(3, 2.5, true), 72.606, 0.8, 1.5, 0.05, "two"),
-    (OneSampleMean(10, 7, true), 26.448, 0.9, 5, 0.05, "one"),
+    (OneSampleMean(10, 7, true), 25.448, 0.9, 5, 0.05, "one"),
     (OneSampleMean(7, 4, false), 6.569, 0.9, 3, 0.1, "one"),
 )
 

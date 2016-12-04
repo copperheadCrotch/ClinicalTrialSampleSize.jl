@@ -30,7 +30,7 @@ type OneSampleMeanSuperior <: TrialTest
     stdunknown::Bool
 
     # Validator
-    function OneSampleMeanSuperior(mu1, mu0, delta, stdunknown)
+    function OneSampleMeanSuperior(mu1, mu0, delta, stdunknown = false)
 
         if !((-Inf < mu1 < Inf) & (-Inf < mu0 < Inf))
 
