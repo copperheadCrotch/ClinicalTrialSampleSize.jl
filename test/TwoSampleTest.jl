@@ -25,6 +25,28 @@ for (test, n, p, std, alpha, side) in params
 end # end for
 
 
+# TwoSampleMeanUnknown
+# Constructor: TwoSampleMeanUnknown()
+@test_throws ErrorException TwoSampleMeanUnknown(-Inf, Inf, 1)
+@test_throws ErrorException TwoSampleMeanUnknown(25, 20, 0)
+
+params = (
+    (TwoSampleMeanUnknown(3, 2, 1), 16.722, 0.8, 1, 0.05, "two"),
+    (TwoSampleMeanUnknown(10, 7, 2), 25.777, 0.9, (5, 3), 0.05, "two"),
+    (TwoSampleMeanUnknown(7, 4, 1), 13.842, 0.9, 3, 0.1, "one"),
+    (TwoSampleMeanUnknown(50, 45, 1.5), 138.142, 0.85, (10.4, 15.2), 0.01, "one"),
+)
+
+for (test, n, p, std, alpha, side) in params
+
+        p_est = power(test; n = n, std = std, alpha = alpha, side = side)
+        n_est = sample_size(test; power = p, std = std, alpha = alpha, side = side)
+
+        @test abs(p_est - p) < 1e-3
+        @test abs(n_est - n) < 1
+
+end # end for
+
 # Two-sample non-inferiority/superiority for mean
 # Constructor: TwoSampleMeanInferior/Superior
 @test_throws ErrorException TwoSampleMeanInferior(-Inf, 5, 1, -1)

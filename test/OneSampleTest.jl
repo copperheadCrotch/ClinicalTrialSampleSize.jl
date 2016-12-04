@@ -23,6 +23,27 @@ for (test, n, p, std, alpha, side) in params
 
 end # end for
 
+# OneSampleMeanUnknown
+# Constructor: OneSampleMeanUnknown()
+# OneSampleMean
+# Constructor: OneSampleMean()
+@test_throws ErrorException OneSampleMeanUnknown(-Inf, Inf)
+
+params = (
+    (OneSampleMeanUnknown(3, 2), 9.913, 0.8, 1, 0.05, "two"),
+    (OneSampleMeanUnknown(7, 4), 8.006, 0.9, 3, 0.1, "one"),
+)
+
+for (test, n, p, std, alpha, side) in params
+
+        p_est = power(test; n = n, std = std, alpha = alpha, side = side)
+        n_est = sample_size(test; power = p, std = std, alpha = alpha, side = side)
+
+        @test abs(p_est - p) < 1e-3
+        @test abs(n_est - n) < 1
+
+end # end for
+
 
 # One-sample non-inferiority/superiority for mean
 # Constructor: OneSampleMeanInferior/Superior
