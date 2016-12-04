@@ -15,6 +15,7 @@ abstract TrialTest
 # Export types
 export
     OneSampleMean,
+    OneSampleMeanUnknown,
     OneSampleMeanInferior,
     OneSampleMeanSuperior,
     OneSampleMeanEqual,
@@ -23,6 +24,7 @@ export
     OneSamplePropSuperior,
     OneSamplePropEqual,
     TwoSampleMean,
+    TwoSampleMeanUnknown,
     TwoSampleMeanInferior,
     TwoSampleMeanSuperior,
     TwoSampleMeanEqual,
@@ -45,6 +47,7 @@ include("CalPower.jl")
 include("CalSampleSize.jl")
 include("CheckArgs.jl")
 include("OneSampleTest/OneSampleMean.jl")
+include("OneSampleTest/OneSampleMeanUnknown.jl")
 include("OneSampleTest/OneSampleMeanInferior.jl")
 include("OneSampleTest/OneSampleMeanSuperior.jl")
 include("OneSampleTest/OneSampleMeanEqual.jl")
@@ -53,6 +56,7 @@ include("OneSampleTest/OneSamplePropInferior.jl")
 include("OneSampleTest/OneSamplePropSuperior.jl")
 include("OneSampleTest/OneSamplePropEqual.jl")
 include("TwoSampleTest/TwoSampleMean.jl")
+include("TwoSampleTest/TwoSampleMeanUnknown.jl")
 include("TwoSampleTest/TwoSampleMeanInferior.jl")
 include("TwoSampleTest/TwoSampleMeanSuperior.jl")
 include("TwoSampleTest/TwoSampleMeanEqual.jl")
