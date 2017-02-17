@@ -28,7 +28,7 @@ Julia package to calculate power and sample size for different clinical trial de
 | Sample        | Test          |
 | ------------- |:-------------:|
 | One-Sample    | Mean, Proportion, Non-inferiority, Superiority, Equivalence |
-| Two-Sample    | Mean, Proportion, Non-inferiority, Superiority, Equivalence, McNemar's |
+| Two-Sample    | Mean, Proportion, Non-inferiority, Superiority, Equivalence, McNemar's, Crossover|
 
 Part of the work refers to John Myles White's work on [PowerAnalysis.jl](https://github.com/johnmyleswhite/PowerAnalysis.jl)
 
