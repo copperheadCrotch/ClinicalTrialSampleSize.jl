@@ -12,7 +12,7 @@ Julia package to calculate power and sample size for different clinical trial de
 
 
 ### Documentation
-[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://contatp.github.io/ClinicalTrialSampleSize.jl/latest)
+[![](https://img.shields.io/badge/docs-latest-blue.svg)](https://Testispuncher.github.io/ClinicalTrialSampleSize.jl/latest)
 
 
 ### Dependencies
